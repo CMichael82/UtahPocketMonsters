@@ -1,33 +1,49 @@
-<div id="home">
-	<div class="container">
-		<div class="row">
-			<div class="col-8 offset-2">
-				<h1>{{msg}}</h1>
-				<h2>This is our Example Home Page!</h2>
-				<form class="clearfix mb-4" action="POST">
-					<div class="form-group">
-						<label for="example-text">Example Text</label>
-						<input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-					</div>
-					<div class="form-group">
-						<label for="example-description">Example Description</label>
-						<textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-					</div>
-					<button id="submit" class="btn btn-primary float-right">Submit</button>
-				</form>
-				<h3>Examples:</h3>
-				<ul id="example-list" class="list-group">
-					{{#each examples}}
-					<li data-id="{{this.id}}" class="list-group-item">
-						<a href="example/{{this.id}}">{{this.text}}</a>
-						<button class="btn btn-danger float-right delete">ｘ</button>
-					</li>
-					{{/each}}
-				</ul>
+<div class='container'>
+	<form>
+		<div class='card large green darken-3'>
+			<div class='card-content white-text'>
+				<span class='card-title'>Utah Pocket Monsters</span>
+				<p>Description of the game</p>
+			</div>
+			<div class='card-action'>
+				<button data-target='registerModal' class='btn modal-trigger white green-text'>Register</button>
+
+				<button data-target='loginModal' class='btn modal-trigger white green-text'>Login</button>
 			</div>
 		</div>
-	</div>
+	</form>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<!-- REGISTER MODAL -->
+
+<div class='modal' id='registerModal'>
+	<form>
+	<div class='modal-content'>
+		<a class='modal-close right orange-text'><i class='material-icons small'>close</i></a>
+		<h4>Create a New Account</h4>
+		<input type='text' name='username' class='form-control' id='username' placeholder='Your Username'>
+		<input type='email' name='email' class='form-control' id='email' placeholder='Enter Email'>
+		<input type='password' name='password' class='form-control' id='password' placeholder='Password'>
+	</div>
+	<div class='modal-footer'>
+		<button type="submit" class='modal-close btn orange' id='registerBtn'>Submit</button>
+	</div>
+	</form>
+</div>
+<!-- Register MODAL- END -->
+
+<!-- LOGIN MODAL -->
+<div class='modal' id='loginModal'>
+	<form>
+	<div class='modal-content'>
+		<a class='modal-close right orange-text'><i class='material-icons small'>close</i></a>
+		<h4>Welcome Back!</h4>
+		<input type='text' name='username' class='form-control' id='loginName' placeholder='Your Username'>
+		<input type='password' name='password' class='form-control' id='loginpsw' placeholder='Password'>
+	</div>
+	<div class='modal-footer'>
+		<button type="submit" class='modal-close btn orange' id='loginBtn'>Submit</button>
+	</div>
+	</form>
+</div>
+<!-- LOGIN MODAL- END -->
