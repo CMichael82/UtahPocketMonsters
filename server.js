@@ -1,6 +1,9 @@
 require('dotenv').config();
 var express = require('express');
 var exphbs = require('express-handlebars');
+var bodyParser = require('body-parser');
+var path = require('path');
+var GoogleStrategy = require('passport-google-oauth20');
 
 var db = require('./models');
 
@@ -11,6 +14,13 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+//Passport Setup//
 
 // Handlebars
 app.engine(
