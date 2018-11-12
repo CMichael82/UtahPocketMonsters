@@ -1,15 +1,7 @@
 var db = require('../models');
+var passport = require('passport');
 
 module.exports = function (app) {
-	// Create a new user
-	app.post("/api/user", function(req, res) {
-		db.User.create(req.body)
-		 .then(function(dbUser) {
-		 console.log(dbUser);
-		 });
- });
-
-	
 	// Get all examples
 	// app.get('/api/examples', function (req, res) {
 	// 	db.Example.findAll({}).then(function (dbExamples) {
