@@ -6,44 +6,11 @@
 				<p>Description of the game</p>
 			</div>
 			<div class='card-action'>
-				<button data-target='registerModal' class='btn modal-trigger white green-text'>Register</button>
-
 				<button data-target='loginModal' class='btn modal-trigger white green-text'>Login</button>
 			</div>
 		</div>
 	</form>
 </div>
 
-<!-- REGISTER MODAL -->
-
-<div class='modal' id='registerModal'>
-	<form>
-	<div class='modal-content'>
-		<a class='modal-close right orange-text'><i class='material-icons small'>close</i></a>
-		<h4>Create a New Account</h4>
-		<input type='text' name='username' class='form-control' id='username' placeholder='Your Username'>
-		<input type='email' name='email' class='form-control' id='email' placeholder='Enter Email'>
-		<input type='password' name='password' class='form-control' id='password' placeholder='Password'>
-	</div>
-	<div class='modal-footer'>
-		<button type="submit" class='modal-close btn orange' id='registerBtn'>Submit</button>
-	</div>
-	</form>
-</div>
-<!-- Register MODAL- END -->
-
 <!-- LOGIN MODAL -->
-<div class='modal' id='loginModal'>
-	<form>
-	<div class='modal-content'>
-		<a class='modal-close right orange-text'><i class='material-icons small'>close</i></a>
-		<h4>Welcome Back!</h4>
-		<input type='text' name='username' class='form-control' id='loginName' placeholder='Your Username'>
-		<input type='password' name='password' class='form-control' id='loginpsw' placeholder='Password'>
-	</div>
-	<div class='modal-footer'>
-		<button type="submit" class='modal-close btn orange' id='loginBtn'>Submit</button>
-	</div>
-	</form>
-</div>
-<!-- LOGIN MODAL- END -->
+{{> modal/login}}
