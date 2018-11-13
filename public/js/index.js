@@ -8,8 +8,5 @@ $(document).ready(function () {
 	$('#createCharacter').on('click', function () {
 		location.href = '/'
 	});
+	$('#newCharacter').modal('show');
 });
-
-// function toggleModal(){
-// 	$('#newCharacter').modal();
-// }

@@ -9,12 +9,15 @@
 					<p>Would you like to pick a new character?</p>
 					<button type="submit" class='btn orange' id='keepCharacter'>No, Keep My Character</button>
 					<button type="submit" class='btn orange' id='createCharacter'>Create A New Character</button>
+					<button class='modal-close btn orange'><a class='white-text' href="/logout">Logout</a></button>
+						<span data-target='#newCharacter'></span>
 				</div>
 				{{!-- </div>
 			<div class='modal-footer'>
 			</div>
 	</form>
 </div> --}}
-{{!-- <button class='modal-close btn orange'><a class='white-text' href="/logout">Logout</a></button> --}}
 
 {{> modal/character-options}}
+
+
