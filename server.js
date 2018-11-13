@@ -4,6 +4,7 @@ var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 var path = require('path');
 var GoogleStrategy = require('passport-google-oauth20');
+var passport = require('passport');
 
 var db = require('./models');
 
