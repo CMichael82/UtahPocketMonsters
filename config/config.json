@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "yahhh5698",
+    "password": "password",
     "database": "pocketMonstersDB",
     "host": "localhost",
     "dialect": "mysql"
