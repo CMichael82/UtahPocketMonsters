@@ -1,14 +1,33 @@
 <div class='container'>
 	<form>
-		<div class='card large green darken-3'>
-			<div class='card-content white-text'>
-				<span class='card-title'>Utah Pocket Monsters</span>
-				<p>Description of the game</p>
+		<div class='left card large blue-grey darken-4 left'>
+			<div class="card-content white-text">
+				<span class="card-title large white-text">
+					<h1>Pocket Monsters</h1>
+					</span>
+				<p class="white-text">
+					<h4>Description:</h4>
+					<h6>
+					1) Register to create a new account, if you've already registered then log in.
+					<br>
+					<br>
+					2) Select the character you want depending on the skill set.
+					<br>
+					<br>
+					3) Click around on the map screen to fight different monsters.
+					<br>
+					<br>
+					4) Go up levels every time you defeat a monster.
+					<br>
+					<br>
+					5) Win the game by defeating all monsters on the map.
+					</h6>
+				</p>
 			</div>
 			<div class='card-action'>
-				<button data-target='registerModal' class='btn modal-trigger white green-text'>Register</button>
+				<button data-target='registerModal' class='waves-effect waves-light btn modal-trigger black white-text darken-4'>Register</button>
 
-				<button data-target='loginModal' class='btn modal-trigger white green-text'>Login</button>
+				<button data-target='loginModal' class='waves-effect waves-light btn modal-trigger black white-text'>Login</button>
 			</div>
 		</div>
 	</form>
@@ -19,14 +38,14 @@
 <div class='modal' id='registerModal'>
 	<form>
 	<div class='modal-content'>
-		<a class='modal-close right orange-text'><i class='material-icons small'>close</i></a>
+		<a class='modal-close right black-text'><i class='material-icons small'>close</i></a>
 		<h4>Create a New Account</h4>
 		<input type='text' name='username' class='form-control' id='username' placeholder='Your Username'>
 		<input type='email' name='email' class='form-control' id='email' placeholder='Enter Email'>
 		<input type='password' name='password' class='form-control' id='password' placeholder='Password'>
 	</div>
 	<div class='modal-footer'>
-		<button type="submit" class='modal-close btn orange' id='registerBtn'>Submit</button>
+		<button type="submit" class='modal-close btn waves-effect waves-light black white-text' id='registerBtn'>Submit</button>
 	</div>
 	</form>
 </div>
@@ -36,13 +55,13 @@
 <div class='modal' id='loginModal'>
 	<form>
 	<div class='modal-content'>
-		<a class='modal-close right orange-text'><i class='material-icons small'>close</i></a>
+		<a class='modal-close right black-text'><i class='material-icons small'>close</i></a>
 		<h4>Welcome Back!</h4>
 		<input type='text' name='username' class='form-control' id='loginName' placeholder='Your Username'>
 		<input type='password' name='password' class='form-control' id='loginpsw' placeholder='Password'>
 	</div>
 	<div class='modal-footer'>
-		<button type="submit" class='modal-close btn orange' id='loginBtn'>Submit</button>
+		<button type="submit" class='modal-close btn waves-effect waves-light black white-text' id='loginBtn'>Submit</button>
 	</div>
 	</form>
 </div>
