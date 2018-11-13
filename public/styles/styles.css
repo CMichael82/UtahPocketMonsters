@@ -1,3 +1,18 @@
 .list-group-item {
 	line-height: 2.5;
 }
+
+body {
+	background-image: url("/images/fantasy-2847724_1920.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.card-image {
+	height: 200px;
+	width: 100%;
+	background-color: slategrey
+}
+
+.container{
+	height: 100px;
+}
