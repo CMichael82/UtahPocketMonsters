@@ -1,35 +1,27 @@
 
 var express = require('express');
 var exphbs = require('express-handlebars');
-var session = require('express-session');
 var bodyParser = require('body-parser');
-var keys = require('./config/keys');
-// var path = require('path');
+//var path = require('path');
+//var GoogleStrategy = require('passport-google-oauth20');
 
 var db = require('./models');
 
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-//session cookies - setup
-var expSession = {
-	secret: keys.cookies.secret,
-	cookie: {}
-};
-
 // Middleware
-// app.use(express.urlencoded({
-// 	extended: false
-// }));
-// app.use(express.json());
-
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({
-	extended: true
-}));
-app.use(bodyParser.json());
-//Session Cookies//
-app.use(session(expSession));
+// app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.json());
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+
+//Passport Setup//
+
 // Handlebars
 app.engine(
 	'handlebars',
@@ -40,14 +32,10 @@ app.engine(
 app.set('view engine', 'handlebars');
 
 // Routes
-require('./services/passport.js')(app);
-require('./routes/auth-routes')(app);
 require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app);
 
-var syncOptions = {
-	force: false
-};
+var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
