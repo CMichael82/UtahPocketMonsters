@@ -1,12 +1,11 @@
 $(document).ready(function () {
 	$('.modal').modal();
-	
+
 	$('#keepCharacter').on('click', function () {
-		location.href = '/'
+		location.href = '/';
 	});
 
 	$('#createCharacter').on('click', function () {
-		location.href = '/'
+		location.href = '/';
 	});
-	$('#newCharacter').modal('show');
 });

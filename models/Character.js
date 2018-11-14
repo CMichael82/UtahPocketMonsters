@@ -5,5 +5,8 @@ module.exports = function (sequelize, DataTypes) {
 		attack_points: DataTypes.INTEGER,
 		start_level: DataTypes.INTEGER,
 	});
+	Character.associate = function (models) {
+		Character.belongsTo(models.User);
+	};
 	return Character;
 };
