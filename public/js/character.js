@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
 	var API = {
-		updateUser: function (character_id) {
+		updateUser: function (characterId) {
 			return $.ajax({
 				method: 'PUT',
-				url: '/api/user/' + character_id,
+				url: '/api/user/' + characterId,
 			});
 		},
 		getCharacter: function () {
@@ -23,15 +23,15 @@ $(document).ready(function () {
 	};
 
 	function pickCharacter() {
-		var character_id = $(this).data('id');
-		console.log(character_id);
+		var characterId = $(this).data('id');
+		console.log(characterId);
 		console.log('You clicked me');
-		API.updateUser(character_id).then(function (data) {
+		API.updateUser(characterId).then(function () {
 			console.log('Character ID Updated!');
 		});
 	}
 
 	$('#characterBtn1, #characterBtn2, #characterBtn3').on('click', pickCharacter);
 
-	$('#test').on('click', displayCharacter);
+	$('#keepBtn').on('click', displayCharacter);
 });

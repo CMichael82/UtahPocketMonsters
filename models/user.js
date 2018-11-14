@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
 		googleId: DataTypes.STRING,
 		name: DataTypes.STRING,
 		email: DataTypes.STRING,
-		character_id: DataTypes.INTEGER,
+		characterId: DataTypes.INTEGER,
 		password: DataTypes.STRING,
 	});
 	User.associate = function (models) {

@@ -31,11 +31,11 @@ module.exports = function (app) {
 			callbackURL: 'http://localhost:3000/callback'
 		},
 		function (accessToken, refreshToken, profile, done) {
-			console.log(profile.displayName, ' is attempting to log in');
-			//check if user exists
+			console.log(profile);
+			// check if user exists
 			db.User.findOne({
 				where: {
-					email: profile.emails[0].value
+					googleId: profile.id
 				}
 			}).then(function (currentUser) {
 				if (currentUser) {
@@ -48,7 +48,7 @@ module.exports = function (app) {
 					db.User.create({
 						googleId: profile.id,
 						name: profile.displayName,
-						email: profile.emails[0].value,
+						// email: profile.emails[0].value,
 					}).then(function (newUser) {
 						console.log(newUser.name, ' created');
 						//user passed into cookie/serializer

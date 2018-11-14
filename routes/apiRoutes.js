@@ -1,11 +1,10 @@
 var db = require('../models');
-var passport = require('passport');
 
 module.exports = function (app) {
 // Update User's Character ID base on character selection
-	app.put('/api/user/:character_id', function (req, res) {
+	app.put('/api/user/:characterId', function (req) {
 		db.User.update({
-			character_id: req.params.character_id
+			characterId: req.params.characterId
 		},{
 			where: {
 				id: req.user.id
@@ -18,7 +17,7 @@ module.exports = function (app) {
 	app.get('/api/character/', function (req, res){
 		db.Character.findOne({
 			where: {
-				id: req.user.character_id
+				id: req.user.characterId
 			},
 			include: [db.User]
 		}).then(function (dbCharacter){
