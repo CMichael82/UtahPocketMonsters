@@ -1,6 +1,6 @@
 var db = require('../models');
-const axios = require('axios');
-const states = require('../data/states');
+var axios = require('axios');
+var states = require('../data/states');
 
 module.exports = function (app) {
 // Update User's Character ID base on character selection
@@ -28,14 +28,14 @@ module.exports = function (app) {
 	});
 
 	app.get('/api/populations/', function (req, res) {
-		const url  = 'http://api.datausa.io/api/?show=geo&sumlevel=state&required=pop&year=latest';
+		var url = 'http://api.datausa.io/api/?show=geo&sumlevel=state&required=pop&year=latest';
 		axios.get(url)
 			.then(data => {
-				let result = data.data.data
+				var result = data.data.data
 					.map(state => ({ id: state[1], population: state[2]}))
 					.map(state => {
-						let result = {};
-						let found = states.find(ourState => ourState.id === state.id);
+						var result = {};
+						var found = states.find(ourState => ourState.id === state.id);
 						if (found) {
 							result = {
 								...found,
@@ -59,8 +59,8 @@ module.exports = function (app) {
 // 	});
 // });
 
-// Delete an example by id
-// app.delete('/api/examples/:id', function (req, res) {
+// Devare an example by id
+// app.devare('/api/examples/:id', function (req, res) {
 // 	db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
 // 		res.json(dbExample);
 // 	});
