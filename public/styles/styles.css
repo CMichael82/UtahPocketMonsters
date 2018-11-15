@@ -3,5 +3,16 @@
 }
 
 body {
-	background-image: url("/styles/images/image.jpg");
+	background-image: url("/images/fantasy-2847724_1920.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.card-image {
+	height: 200px;
+	width: 100%;
+	background-color: slategrey
+}
+
+.container{
+	height: 100px;
 }
