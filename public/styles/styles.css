@@ -6,6 +6,7 @@ body {
 	background-image: url("/images/fantasy-2847724_1920.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background: grey;
 }
 .card-image {
 	height: 200px;
