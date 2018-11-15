@@ -1,4 +1,6 @@
 var db = require('../models');
+const axios = require('axios');
+const states = require('../data/states');
 
 module.exports = function (app) {
 // Update User's Character ID base on character selection
@@ -23,6 +25,31 @@ module.exports = function (app) {
 		}).then(function (dbCharacter){
 			res.json(dbCharacter);
 		});
+	});
+
+	app.get('/api/populations/', function (req, res) {
+		const url  = 'http://api.datausa.io/api/?show=geo&sumlevel=state&required=pop&year=latest';
+		axios.get(url)
+			.then(data => {
+				let result = data.data.data
+					.map(state => ({ id: state[1], population: state[2]}))
+					.map(state => {
+						let result = {};
+						let found = states.find(ourState => ourState.id === state.id);
+						if (found) {
+							result = {
+								...found,
+								population: state.population
+							};
+						}
+						return result;
+					})
+					.filter(state => state.name !== undefined);
+				res.json(result);
+			})
+			.catch(error => {
+				console.log('error', error);
+			});
 	});
 
 // Create a new example
