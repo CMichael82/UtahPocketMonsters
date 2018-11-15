@@ -24,7 +24,7 @@ module.exports = function (app) {
 	});
 
 	app.get('/map', authCheck, function (req, res){
-		res.render('map-test');
+		res.render('map-mapbox');
 	});
 
 	// Load example page and pass in an example by id
