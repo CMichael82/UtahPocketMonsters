@@ -4,9 +4,7 @@ module.exports = function (sequelize, DataTypes) {
 		lifePoints: DataTypes.INTEGER,
 		attackPoints: DataTypes.INTEGER,
 		startLevel: DataTypes.INTEGER,
+		difficulty: DataTypes.INTEGER
 	});
-	Character.associate = function (models) {
-		Character.belongsTo(models.User);
-	};
 	return Character;
 };

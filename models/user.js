@@ -6,10 +6,5 @@ module.exports = function (sequelize, DataTypes) {
 		characterId: DataTypes.INTEGER,
 		password: DataTypes.STRING,
 	});
-	User.associate = function (models) {
-		User.hasOne(models.Character, {
-			onDelete: 'cascade'
-		});
-	};
 	return User;
 };

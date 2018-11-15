@@ -23,6 +23,10 @@ module.exports = function (app) {
 		});
 	});
 
+	app.get('/fight', function(req, res){
+		res.render('fight-test');
+	})
+
 	app.get('/map', authCheck, function (req, res){
 		res.render('map-test');
 	});
