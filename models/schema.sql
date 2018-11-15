@@ -2,6 +2,9 @@ DROP DATABASE IF EXISTS pocketMonstersDB;
 CREATE DATABASE pocketMonstersDB;
 USE  pocketMonstersfDB;
 
+DROP DATABASE IF EXISTS testdb;
+CREATE DATABASE testdb;
+
 CREATE TABLE Characters(
   item_id INT AUTO_INCREMENT NOT NULL,
   character_name VARCHAR(100) NOT NULL,

@@ -1,13 +1,29 @@
-// var db = require('../models');
-// var passport = require('passport');
+var db = require('../models');
 
-// module.exports = function (app) {
-// Get all examples
-// app.get('/api/examples', function (req, res) {
-// 	db.Example.findAll({}).then(function (dbExamples) {
-// 		res.json(dbExamples);
-// 	});
-// });
+module.exports = function (app) {
+// Update User's Character ID base on character selection
+	app.put('/api/user/:characterId', function (req) {
+		db.User.update({
+			characterId: req.params.characterId
+		},{
+			where: {
+				id: req.user.id
+			}
+		}).then(function (dbUser) {
+			console.log(dbUser);
+		});
+	});
+
+	app.get('/api/character/', function (req, res){
+		db.Character.findOne({
+			where: {
+				id: req.user.characterId
+			},
+			include: [db.User]
+		}).then(function (dbCharacter){
+			res.json(dbCharacter);
+		});
+	});
 
 // Create a new example
 // app.post('/api/examples', function (req, res) {
@@ -22,4 +38,4 @@
 // 		res.json(dbExample);
 // 	});
 // });
-// };
+};
