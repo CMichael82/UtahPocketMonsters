@@ -1,0 +1,19 @@
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+
+<h1>Map page is here</h1>
+
+<!-- START: MAP -->
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidHZsb24iLCJhIjoiY2pvaTM4emF5MDUwdzNrbzJpaWNyNmdjMyJ9.WgOaXVervxDb60HenMC76A';
+	var middleAmerica = new mapboxgl.LngLat(-98.552282, 39.228612);
+	var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v10',
+		camera: {
+			center: middleAmerica,
+		}
+	});
+</script>
+<!-- END: MAP -->
