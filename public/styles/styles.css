@@ -18,3 +18,27 @@ body {
 	margin: 0 auto;
 }
 
+
+
+/* for the title of the map screen */
+.title {
+	text-align: center;
+}
+
+/* for the background image of the map screen */
+body, html {
+	height: 100%;
+}
+
+.bg { 
+	/* The image used */
+	background-image: url("./images/destroyed-city.jpg");
+
+	/* Full height */
+	height: 100%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
