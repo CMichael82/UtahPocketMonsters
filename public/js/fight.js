@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
 	var API = {
 		getMonster: function (monsterId) {
 			return $.ajax({
@@ -7,32 +6,31 @@ $(document).ready(function () {
 				type: 'GET'
 			});
 		},
-		getCharacter: function (req) {
+		getCharacter: function () {
 			return $.ajax({
 				url: '/api/character/',
 				type: 'GET'
 			});
 		}
 	};
-	
+
 	function displayMonster() {
 		API.getMonster().then(function (data) {
 			var monster = data;
-			$('.monster').html(monster.monsterName);
-			$('.monsterLife').html(monster.lifePoints);
-			$('.monsterAttack').html(monster.attackPoints);
+			$('#monster').html(monster.monsterName);
+			$('#monsterLife').html(monster.lifePoints);
+			$('#monsterAttack').html(monster.attackPoints);
 		});
 	}
 
 	function displayCharacter() {
 		API.getCharacter().then(function (data) {
-			console.log(data);
-		// 	var character = data;
-		// 	$('.character').html(character.characterName);
-		// 	$('.characterLife').html(character.lifePoints);
-		// 	$('.characterAttack').html(character.attackPoints);
+			var character = data;
+			$('#character').html(character.characterName);
+			$('#characterLife').html(character.lifePoints);
+			$('#characterAttack').html(character.attackPoints);
 		});
-	
+
 	};
 	displayCharacter();
 	displayMonster();

@@ -1,14 +1,43 @@
-<h1>YOU</h1>
-<h4 class='character'></h4>
-<h6 class='characterLife'></h6>
-<h6 class='characterAttack'></h6>
+<button class='right btn grey darken-1'><a class='white-text' href="/logout">Logout</a></button>
 
-<h1>YOUR MONSTER</h1>
-<h4 class='monster'></h4>
-<h6 class='monsterLife'></h6>
-<h6 class='monsterAttack'></h6>
+<div class="container content">
+	<div class="row">
 
-<button id='attackBtn'>Attack</button>
+		<div class="col s4">
+			<div class="card medium">
+				<div class="card-image">
+					<img src="/images/image.jpg">
+					<span class="card-title" id='character'></span>
+				</div>
+				<div class="card-content">
+					<p>Life Points: <span id='characterLife'></span></p>
+					<p>Life Points: <span id='characterAttack'></span></p>
+				</div>
+			</div>
+		</div>
 
-<h1>Result</h1>
-<h6 class='result'></h6>
+		<div class="col s4">
+			<h1 class="center">Result</h1>
+			<h6 class='center result'></h6>
+			<br>
+			<div class="center">
+			<button class='btn grey darken-1' id='attackBtn'>Attack</button>
+			</div>
+		</div>
+
+		<div class="col s4">
+			<div class="card medium">
+				<div class="card-image">
+					<img src="styles/images/Monster1.png">
+					<span class="card-title" id="monster"></span>
+				</div>
+				<div class="card-content">
+					<p>Life Points: <span id='monsterLife'></span></p>
+					<p>Life Points: <span id='monsterAttack'></span></p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
