@@ -25,7 +25,7 @@ module.exports = function (app) {
 	});
 
 	app.get('/fight', authCheck, function (req, res){
-		res.render('fight-test');
+		res.render('fight');
 	});
 
 	app.get('/map', authCheck, function (req, res){
@@ -50,11 +50,6 @@ module.exports = function (app) {
 	});
 
 	app.get('/newyork', authCheck, function (req, res){
-		res.render('fight');
-	});
-
-
-	app.get('/fight', function (req, res){
 		res.render('fight');
 	});
 
