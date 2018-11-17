@@ -55,7 +55,11 @@ $(document).ready(function () {
 		//If hit unsuccessful, show a miss//
 		if (Math.random() < hit) {
 			console.log('You Miss!' + '\n--------------------------\n');
-			$result.html('You Missed! <br><br> Try Again?');
+			$result.html('You Missed!');
+			$attackBtn.hide();
+			//allow for counter-attack//
+			setTimeout(counterMessage, 1500);
+			setTimeout(counterAttack, 4000);
 
 			//If hit successful, determine amount of damage//
 		} else {
@@ -74,8 +78,8 @@ $(document).ready(function () {
 				$result.html('You Defeated ' + monster.monsterName);
 			} else {
 				//If Opponent still alive, allow for their counter-attack
-				setTimeout(counterMessage, 2000);
-				setTimeout(counterAttack, 5000);
+				setTimeout(counterMessage, 1500);
+				setTimeout(counterAttack, 4000);
 			}
 		}
 	}
