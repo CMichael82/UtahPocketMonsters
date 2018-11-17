@@ -24,9 +24,9 @@ module.exports = function (app) {
 		});
 	});
 
-	app.get('/fight', authCheck, function(req, res){
+	app.get('/fight', authCheck, function (req, res){
 		res.render('fight-test');
-	})
+	});
 
 	app.get('/map', authCheck, function (req, res){
 		res.render('map');

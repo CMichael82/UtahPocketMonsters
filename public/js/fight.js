@@ -8,7 +8,7 @@ $(document).ready(function () {
 	var monster;
 	var character;
 	var API = {
-		getMonster: function (monsterId) {
+		getMonster: function () {
 			return $.ajax({
 				url: 'api/monster/',
 				type: 'GET'
@@ -48,7 +48,7 @@ $(document).ready(function () {
 	function characterAttack() {
 		console.log('Your Life Points: ' + character.lifePoints);
 
-			//Determine percentage likely to hit opponent//
+		//Determine percentage likely to hit opponent//
 		var hit = (character.accuracy - monster.defense) / 100;
 		console.log('Your Likelihood of a Hit: ' + (hit * 100) + '%');
 
@@ -102,7 +102,7 @@ $(document).ready(function () {
 		} else {
 			$attackBtn.show();
 			var monterDamage = monster.attackPoints += parseInt(Math.random() * 6);
-			$result.html("You've taken a " + monterDamage + ' Point Hit!<br><br> Attach Again?');
+			$result.html('You\'ve taken a ' + monterDamage + ' Point Hit!<br><br> Attach Again?');
 			console.log('Damage From Monster: ' + monster.attackPoints);
 			character.lifePoints -= monterDamage;
 			console.log('Character Life Points: ' + character.lifePoints + '\n--------------------------\n');
@@ -112,8 +112,8 @@ $(document).ready(function () {
 
 			//determine if player was defeated//
 			if (character.lifePoints <= 0) {
-				console.log('You Lose!')
-				$result.html("YOU'VE BEEN DEFEATED!");
+				console.log('You Lose!');
+				$result.html('YOU\'VE BEEN DEFEATED!');
 			}
 		}
 	}
@@ -126,5 +126,5 @@ $(document).ready(function () {
 
 	/////CALL FUNCTIONS/ EVENT LISTENING///////////
 	displayOpponets();
-	$('body').on('click', '#attackBtn', characterAttack);;
+	$('body').on('click', '#attackBtn', characterAttack);
 });

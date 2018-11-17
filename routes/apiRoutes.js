@@ -34,12 +34,12 @@ module.exports = function (app) {
 				///THIS NEEDS TO BE UPDATED//
 				id: 1
 			}
-		}).then(function(dbMonster){
+		}).then(function (dbMonster){
 			res.json(dbMonster);
 		});
 	});
 
-//Query the DATA USA api based on State Populations//
+	//Query the DATA USA api based on State Populations//
 	app.get('/api/populations/', function (req, res) {
 		var url = 'http://api.datausa.io/api/?show=geo&sumlevel=state&required=pop&year=latest';
 		axios.get(url)
