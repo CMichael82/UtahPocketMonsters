@@ -15,6 +15,6 @@ VALUES ('Bat Wing Demon', 100, 11, 40, 30, 3, '/images/beast1.jpg','2018-11-14 0
 SELECT * FROM Monsters;
 
 INSERT INTO Monsters(monsterName, lifePoints, attackPoints, accuracy, dodging, imageUrl, createdAt, updatedAt) 
-VALUES ('Voodoolich', 100, 12, 41,31, '/styles/images/Webhag.jpg','2018-11-14 05:41:33', '2018-11-14 05:41:33'),
-('Trancelich', 150, 13, 42, 32,'/styles/images/Trancelich.jpg','2018-11-14 05:41:33', '2018-11-14 05:41:33'),
-('Mistling', 200, 14, 43, 33, '/styles/images/mistling.jpg','2018-11-14 05:41:33', '2018-11-14 05:41:33');
+VALUES ('Voodoolich', 100, 12, 41,31, '/images/Webhag.jpg','2018-11-14 05:41:33', '2018-11-14 05:41:33'),
+('Trancelich', 150, 13, 42, 32,'/images/Trancelich.jpg','2018-11-14 05:41:33', '2018-11-14 05:41:33'),
+('Mistling', 200, 14, 43, 33, '/images/mistling.jpg','2018-11-14 05:41:33', '2018-11-14 05:41:33');
