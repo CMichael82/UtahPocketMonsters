@@ -3,8 +3,10 @@ module.exports = function (sequelize, DataTypes) {
 		characterName: DataTypes.STRING,
 		lifePoints: DataTypes.INTEGER,
 		attackPoints: DataTypes.INTEGER,
+		accuracy: DataTypes.INTEGER, 
+		defense: DataTypes.INTEGER,
 		startLevel: DataTypes.INTEGER,
-		difficulty: DataTypes.INTEGER
+		imageUrl: DataTypes.STRING
 	});
 	return Character;
 };

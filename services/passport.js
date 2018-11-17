@@ -47,7 +47,7 @@ module.exports = function (app) {
 					//create user in db
 					db.User.create({
 						googleId: profile.id,
-						name: profile.displayName,
+						name: profile.name.givenName,
 						// email: profile.emails[0].value,
 					}).then(function (newUser) {
 						console.log(newUser.name, ' created');
