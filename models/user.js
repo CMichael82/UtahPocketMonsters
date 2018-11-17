@@ -3,6 +3,7 @@ module.exports = function (sequelize, DataTypes) {
 		googleId: DataTypes.STRING,
 		name: DataTypes.STRING,
 		email: DataTypes.STRING,
+		characterId: DataTypes.INTEGER,
 		password: DataTypes.STRING,
 	});
 	return User;

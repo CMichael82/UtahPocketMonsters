@@ -10,12 +10,13 @@ var authCheck = function (req, res, next){
 };
 
 module.exports = function (app) {
-	// Load index page
+
+	// Load home/login page
 	app.get('/', function (req, res) {
 		res.render('index');
 	});
 
-	//load create character page (only if user is logged in)
+	///Pages that require user to be logged in//
 	app.get('/character', authCheck, function (req, res){
 		res.render('character', {
 			msg: 'Welcome,',
@@ -23,14 +24,35 @@ module.exports = function (app) {
 		});
 	});
 
-	// Load example page and pass in an example by id
-	// app.get('/example/:id', function (req, res) {
-	// 	db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-	// 		res.render('example', {
-	// 			example: dbExample
-	// 		});
-	// 	});
-	// });
+	app.get('/fight', authCheck, function (req, res){
+		res.render('fight-test');
+	});
+
+	app.get('/map', authCheck, function (req, res){
+		res.render('map');
+	});
+
+	// each of the battle zones will have a page here
+	app.get('/california', authCheck, function (req, res){
+		res.render('fight');
+	});
+
+	app.get('/utah', authCheck, function (req, res){
+		res.render('fight');
+	});
+
+	app.get('/texas', authCheck, function (req, res){
+		res.render('fight');
+	});
+
+	app.get('/florida', authCheck, function (req, res){
+		res.render('fight');
+	});
+
+	app.get('/newyork', authCheck, function (req, res){
+		res.render('fight');
+	});
+
 
 	app.get('/fight', function(req, res){
 		res.render('fight');

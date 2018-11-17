@@ -8,6 +8,7 @@ body {
 	background-attachment: fixed;
 	background: url("/images/fantasy-2847724_1920.jpg");
 }
+
 .card-image {
 	height: 200px;
 	width: 100%;
@@ -16,6 +17,46 @@ body {
 
 #fightBox{
 	margin-top: 100px;
+.content {
+	margin: 0 auto;
+}
+
+#cardImage{
+	height: 100%;
+	width: 100%;
+}
+
+
+
+/* for the title of the map screen */
+.title {
+	text-align: center;
+	font-weight: bold;
+	
+}
+
+/* for the background image of the map screen */
+body, html {
+	height: 100%;
+}
+
+.bg { 
+	/* The image used */
+	background-image: url("./images/destroyed-city.jpg");
+
+	/* Full height */
+	height: 100%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.result{
+	font-size: 18px;
+	font-weight: bold;
+	color: #006064 ;
 }
 
 #arrowImage {
