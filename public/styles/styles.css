@@ -3,17 +3,16 @@
 }
 
 body {
-	background-image: url("/images/fantasy-2847724_1920.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background: url("/images/fantasy-2847724_1920.jpg");
 }
 
-.card-image {
-	height: 200px;
+/*.card-image {
+	height: 100%;
 	width: 100%;
 	background-color: slategrey
-}
+}*/
 
 #fightBox{
 	margin-top: 100px;
@@ -23,10 +22,10 @@ body {
 	margin: 0 auto;
 }
 
-#cardImage{
+/*#cardImage {
 	height: 100%;
 	width: 100%;
-}
+}*/
 
 
 
@@ -44,7 +43,9 @@ body, html {
 
 .bg { 
 	/* The image used */
-	background-image: url("./images/destroyed-city.jpg");
+	background: url("/images/destroyed-city.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 
 	/* Full height */
 	height: 100%; 
@@ -56,19 +57,20 @@ body, html {
 }
 
 .result{
-	font-size: 18px;
+	font-size: 36px;
 	font-weight: bold;
-	color: #006064 ;
+	color: white ;
 }
 
-#arrowImage {
+/*#arrowImage {
 	margin-left: 35px;
-}
+}*/
 
 #monsterImage {
 	height: 100%;
 	width: 100%;
 }
+
 
 .content {
 	margin: 0 auto;
@@ -78,4 +80,20 @@ body, html {
 #fightButton {
 	margin-left: 15px;
 	margin-top: 100px;
+}
+
+@media only screen and (max-width: 1100px) {
+	
+	.mapImage {
+		height: 600px;
+		width: 600px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	
+	.mapImage {
+		height: 300px;
+		width: 300px;
+	}
 }
