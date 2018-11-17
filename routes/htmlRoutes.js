@@ -32,6 +32,28 @@ module.exports = function (app) {
 		res.render('map');
 	});
 
+	// each of the battle zones will have a page here
+	app.get('/california', authCheck, function (req, res){
+		res.render('fight');
+	});
+
+	app.get('/utah', authCheck, function (req, res){
+		res.render('fight');
+	});
+
+	app.get('/texas', authCheck, function (req, res){
+		res.render('fight');
+	});
+
+	app.get('/florida', authCheck, function (req, res){
+		res.render('fight');
+	});
+
+	app.get('/newyork', authCheck, function (req, res){
+		res.render('fight');
+	});
+
+
 	// Render 404 page for any unmatched routes
 	app.get('*', function (req, res) {
 		res.render('404');

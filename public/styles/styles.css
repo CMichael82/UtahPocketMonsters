@@ -28,6 +28,8 @@ body {
 /* for the title of the map screen */
 .title {
 	text-align: center;
+	font-weight: bold;
+	
 }
 
 /* for the background image of the map screen */
