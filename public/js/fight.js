@@ -49,7 +49,7 @@ $(document).ready(function () {
 		console.log('Your Life Points: ' + character.lifePoints);
 
 		//Determine percentage likely to hit opponent//
-		var hit = (character.accuracy - monster.defense) / 100;
+		var hit = (character.accuracy - monster.dodging) / 100;
 		console.log('Your Likelihood of a Hit: ' + (hit * 100) + '%');
 
 		//If hit unsuccessful, show a miss//
@@ -93,7 +93,7 @@ $(document).ready(function () {
 	//have opponent attack//
 	function counterAttack() {
 		//Determine percentage likely to hit opponent//
-		var hit = (monster.accuracy - character.defense) / 100;
+		var hit = (monster.accuracy - character.dodging) / 100;
 		console.log('Monster Likelihood of a Hit: ' + (hit * 100) + '%');
 
 		//If hit unsuccessful, show a miss//

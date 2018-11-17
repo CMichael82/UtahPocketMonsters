@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
 		lifePoints: DataTypes.INTEGER,
 		attackPoints: DataTypes.INTEGER,
 		accuracy: DataTypes.INTEGER, 
-		defense: DataTypes.INTEGER,
+		dodging: DataTypes.INTEGER,
 		startLevel: DataTypes.INTEGER,
 		imageUrl: DataTypes.STRING
 	});
