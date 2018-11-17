@@ -3,11 +3,11 @@ var axios = require('axios');
 var states = require('../data/states');
 
 module.exports = function (app) {
-// Update User's Character ID base on character selection
+	// Update User's Character ID base on character selection
 	app.put('/api/user/:characterId', function (req) {
 		db.User.update({
 			characterId: req.params.characterId
-		},{
+		}, {
 			where: {
 				id: req.user.id
 			}
@@ -16,17 +16,30 @@ module.exports = function (app) {
 		});
 	});
 
-	app.get('/api/character/', function (req, res){
+	//find a character based on the user's id///
+	app.get('/api/character/', function (req, res) {
 		db.Character.findOne({
 			where: {
 				id: req.user.characterId
 			},
-			include: [db.User]
-		}).then(function (dbCharacter){
+		}).then(function (dbCharacter) {
 			res.json(dbCharacter);
 		});
 	});
 
+	//find a monster based on the state selected//
+	app.get('/api/monster/', function (req, res) {
+		db.Monster.findOne({
+			where: {
+				///THIS NEEDS TO BE UPDATED//
+				id: 1
+			}
+		}).then(function (dbMonster){
+			res.json(dbMonster);
+		});
+	});
+
+	//Query the DATA USA api based on State Populations//
 	app.get('/api/populations/', function (req, res) {
 		var url = 'http://api.datausa.io/api/?show=geo&sumlevel=state&required=pop&year=latest';
 		axios.get(url)
@@ -51,18 +64,4 @@ module.exports = function (app) {
 				console.log('error', error);
 			});
 	});
-
-// Create a new example
-// app.post('/api/examples', function (req, res) {
-// 	db.Example.create(req.body).then(function (dbExample) {
-// 		res.json(dbExample);
-// 	});
-// });
-
-// Devare an example by id
-// app.devare('/api/examples/:id', function (req, res) {
-// 	db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
-// 		res.json(dbExample);
-// 	});
-// });
 };

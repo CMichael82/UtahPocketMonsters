@@ -3,10 +3,10 @@ module.exports = function (sequelize, DataTypes) {
 		characterName: DataTypes.STRING,
 		lifePoints: DataTypes.INTEGER,
 		attackPoints: DataTypes.INTEGER,
+		accuracy: DataTypes.INTEGER, 
+		dodging: DataTypes.INTEGER,
 		startLevel: DataTypes.INTEGER,
+		imageUrl: DataTypes.STRING
 	});
-	Character.associate = function (models) {
-		Character.belongsTo(models.User);
-	};
 	return Character;
 };

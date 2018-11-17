@@ -18,6 +18,11 @@ body {
 	margin: 0 auto;
 }
 
+#cardImage{
+	height: 100%;
+	width: 100%;
+}
+
 
 
 /* for the title of the map screen */
@@ -43,4 +48,10 @@ body, html {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.result{
+	font-size: 18px;
+	font-weight: bold;
+	color: #006064 ;
 }
