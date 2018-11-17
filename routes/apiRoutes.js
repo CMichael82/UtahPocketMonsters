@@ -32,7 +32,7 @@ module.exports = function (app) {
 		db.Monster.findOne({
 			where: {
 				///THIS NEEDS TO BE UPDATED//
-				id: 2
+				id: 1
 			}
 		}).then(function (dbMonster){
 			res.json(dbMonster);
