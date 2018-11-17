@@ -6,12 +6,17 @@ body {
 	background-image: url("/images/fantasy-2847724_1920.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background: url("/images/fantasy-2847724_1920.jpg");
 }
 
 .card-image {
 	height: 200px;
 	width: 100%;
 	background-color: slategrey
+}
+
+#fightBox{
+	margin-top: 100px;
 }
 
 .content {
@@ -54,4 +59,23 @@ body, html {
 	font-size: 18px;
 	font-weight: bold;
 	color: #006064 ;
+}
+
+#arrowImage {
+	margin-left: 35px;
+}
+
+#monsterImage {
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	margin: 0 auto;
+}
+
+
+#fightButton {
+	margin-left: 15px;
+	margin-top: 100px;
 }
