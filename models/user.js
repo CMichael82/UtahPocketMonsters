@@ -6,8 +6,5 @@ module.exports = function (sequelize, DataTypes) {
 		characterId: DataTypes.INTEGER,
 		password: DataTypes.STRING,
 	});
-	User.associate = function (models) {
-		User.hasMany(models.MonsterDefeated);
-	};
 	return User;
 };

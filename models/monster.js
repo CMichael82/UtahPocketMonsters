@@ -7,9 +7,5 @@ module.exports = function (sequelize, DataTypes) {
 		dodging: DataTypes.INTEGER,
 		imageUrl: DataTypes.STRING,
 	});
-	Monster.associate = function (models) {
-		Monster.hasMany(models.MonsterDefeated);
-		};
-
 	return Monster;
 };

@@ -5,6 +5,7 @@ $(document).ready(function () {
 	var $characterLife = $('#characterLife');
 	var $result = $('.result');
 	var $attackBtn = $('#attackBtn');
+	var $hiddenBtn = $('.hiddenBtn');
 	var monster;
 	var character;
 	var level;
@@ -20,14 +21,7 @@ $(document).ready(function () {
 				url: '/api/character/',
 				type: 'GET'
 			});
-		},
-		monsterDefeated: function(){
-			return $.ajax({
-				url: '/api/defeated/' + level,
-				type: 'PUT'
-			})
 		}
-	
 	};
 
 	/////////////FUNCTIONS////////////////////
@@ -84,11 +78,9 @@ $(document).ready(function () {
 			if (monster.lifePoints <= 0) {
 				console.log('You Won!');
 				$result.html('You Defeated ' + monster.monsterName);
-
-
-
-
-				setTimeout(()=>	window.location = '/map', 2000);
+				$attackBtn.hide();
+				scoreboard();
+				setTimeout(() => $hiddenBtn.show(), 2000);
 			} else {
 				//If Opponent still alive, allow for their counter-attack
 				setTimeout(counterMessage, 1500);
@@ -132,19 +124,23 @@ $(document).ready(function () {
 				console.log('You Lose!');
 				$result.html('YOU\'VE BEEN DEFEATED!');
 				$attackBtn.hide();
-				setTimeout(()=>	window.location = '/character', 2000);
-				
+				scoreboard();
+				setTimeout(() => $hiddenBtn.show(), 2000);
 			}
 		}
 	}
 
 	//Update lifepoint in the DOM//
 	function scoreboard() {
-		$monsterLife.html(monster.lifePoints);
-		$characterLife.html(character.lifePoints);
+		if (monster.lifePoints <= 0) {
+			$monsterLife.html('<br> Killed');
+		} else if (character.lifePoints <= 0) {
+			$characterLife.html('<br> Killed');
+		} else {
+			$monsterLife.html(monster.lifePoints);
+			$characterLife.html(character.lifePoints);
+		}
 	}
-
-	//Restart Game//
 
 	/////CALL FUNCTIONS/ EVENT LISTENING///////////
 	displayOpponets();
