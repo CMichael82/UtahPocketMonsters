@@ -8,7 +8,7 @@ $(document).ready(function () {
 	var $hiddenBtn = $('.hiddenBtn');
 	var monster;
 	var character;
-	var level;
+
 	var API = {
 		getMonster: function () {
 			return $.ajax({
