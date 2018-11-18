@@ -65,7 +65,7 @@ module.exports = function (app) {
 	function (req, username, password, done) {
 		var password = req.body.password;
 		// IN THE FUTURE HASH PASSWORDS 
-			db.User.findOne({
+		db.User.findOne({
 			where: {
 				password: password
 			}
