@@ -3,7 +3,7 @@
 ## Trilogy Boot-Camp Project 2
 
 ### Objective: 
-Create a RPG based on Pokemon (with a monster theme) using various technologies.
+Create a RPG (with a monster theme) using various technologies.
 
 ### About the Game:
 
