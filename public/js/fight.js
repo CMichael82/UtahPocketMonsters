@@ -5,8 +5,10 @@ $(document).ready(function () {
 	var $characterLife = $('#characterLife');
 	var $result = $('.result');
 	var $attackBtn = $('#attackBtn');
+	var $hiddenBtn = $('.hiddenBtn');
 	var monster;
 	var character;
+
 	var API = {
 		getMonster: function () {
 			return $.ajax({
@@ -76,6 +78,9 @@ $(document).ready(function () {
 			if (monster.lifePoints <= 0) {
 				console.log('You Won!');
 				$result.html('You Defeated ' + monster.monsterName);
+				$attackBtn.hide();
+				scoreboard();
+				setTimeout(() => $hiddenBtn.show(), 2000);
 			} else {
 				//If Opponent still alive, allow for their counter-attack
 				setTimeout(counterMessage, 1500);
@@ -118,14 +123,23 @@ $(document).ready(function () {
 			if (character.lifePoints <= 0) {
 				console.log('You Lose!');
 				$result.html('YOU\'VE BEEN DEFEATED!');
+				$attackBtn.hide();
+				scoreboard();
+				setTimeout(() => $hiddenBtn.show(), 2000);
 			}
 		}
 	}
 
 	//Update lifepoint in the DOM//
 	function scoreboard() {
-		$monsterLife.html(monster.lifePoints);
-		$characterLife.html(character.lifePoints);
+		if (monster.lifePoints <= 0) {
+			$monsterLife.html('<br> Killed');
+		} else if (character.lifePoints <= 0) {
+			$characterLife.html('<br> Killed');
+		} else {
+			$monsterLife.html(monster.lifePoints);
+			$characterLife.html(character.lifePoints);
+		}
 	}
 
 	/////CALL FUNCTIONS/ EVENT LISTENING///////////
