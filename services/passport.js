@@ -63,12 +63,11 @@ module.exports = function (app) {
 		passReqToCallback : true 
 	},
 	function (req, username, password, done) {
-		var email = req.body.email;
-		// console.log('Current User Is: ', username);
-		// console.log('Current User Password Is: ', password);
+		var password = req.body.password;
+		// IN THE FUTURE HASH PASSWORDS 
 		db.User.findOne({
 			where: {
-				email: email
+				password: password
 			}
 		}).then(function (currentUser) {
 			if (currentUser) {

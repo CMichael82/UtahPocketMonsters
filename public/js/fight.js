@@ -91,7 +91,7 @@ $(document).ready(function () {
 
 	//let player know the opponent will be attacking
 	function counterMessage() {
-		$result.html(monster.monsterName + '<br><br> is Launching a Counter Attack!');
+		$result.html(monster.monsterName + '<br> is Launching a Counter Attack!');
 		$attackBtn.hide();
 	}
 
@@ -104,14 +104,14 @@ $(document).ready(function () {
 		//If hit unsuccessful, show a miss//
 		if (Math.random() < hit) {
 			console.log('Monster Missed' + '\n--------------------------\n');
-			$result.html(monster.monsterName + ' Missed! <br><br> Your Turn.');
+			$result.html(monster.monsterName + ' Missed! <br> Your Turn.');
 			$attackBtn.show();
 
 			//If hit successful, determine amount of damage//
 		} else {
 			$attackBtn.show();
 			var monterDamage = monster.attackPoints += parseInt(Math.random() * 6);
-			$result.html('You\'ve taken a ' + monterDamage + ' Point Hit!<br><br> Attach Again?');
+			$result.html('You\'ve taken a ' + monterDamage + ' Point Hit!');
 			console.log('Damage From Monster: ' + monster.attackPoints);
 			character.lifePoints -= monterDamage;
 			console.log('Character Life Points: ' + character.lifePoints + '\n--------------------------\n');

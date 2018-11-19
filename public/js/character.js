@@ -22,10 +22,12 @@ $(document).ready(function () {
 		});
 	};
 
-	function pickCharacter() {
+	function pickCharacter(event) {
+		event.preventDefault();
 		var characterId = $(this).data('id');
 		console.log(characterId);
 		console.log('You clicked me');
+		window.location = '/map';
 		API.updateUser(characterId).then(function () {
 			console.log('Character ID Updated!');
 		});
