@@ -32,10 +32,11 @@ module.exports = function (app) {
 		db.Monster.findOne({
 			where: {
 				///THIS NEEDS TO BE UPDATED//
-				id: 1
+				id: Math.floor(Math.random() * 3) + 1  
 			}
 		}).then(function (dbMonster){
 			res.json(dbMonster);
+			console.log(dbMonster);
 		});
 	});
 
