@@ -4,6 +4,8 @@ var LocalStrategy = require('passport-local');
 var db = require('../models');
 var keys = require('../config/keys');
 
+var callbackURL = process.env.callbackURL || 'http://localhost:3000/callback'
+
 module.exports = function (app) {
 	// Middleware
 	app.use(passport.initialize());
@@ -28,7 +30,7 @@ module.exports = function (app) {
 		new GoogleStrategy({
 			clientID: keys.google.clientID,
 			clientSecret: keys.google.clientSecret,
-			callbackURL: 'http://localhost:3000/callback'
+			callbackURL: callbackURL
 		},
 		function (accessToken, refreshToken, profile, done) {
 			console.log(profile);
