@@ -4,7 +4,7 @@ var LocalStrategy = require('passport-local');
 var db = require('../models');
 var keys = require('../config/keys');
 
-var callbackURL = process.env.callbackURL || 'http://localhost:3000/callback'
+var callbackURL = process.env.callbackURL || 'http://localhost:3000/callback';
 
 module.exports = function (app) {
 	// Middleware
