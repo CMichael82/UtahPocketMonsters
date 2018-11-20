@@ -15,7 +15,7 @@ Once logged in, the user can select a new character to play (or keep their previ
 
 ![Character Page](./public/images/character-page.png?raw=true "Character Page")
 
-After selecting a player, a map of the U.S. is displayed. The user is asked to pick their battleground (select states only). This initiates an API query that returns the state's population. The opponent (monster) is determined based on the population range; more heavily populated states equal more advanced monsters. 
+After selecting a player, a map of the U.S. is displayed. The user is asked to pick their battleground (select states only). This initiates an API query that returns the state's population. The opponent (monster) is determined based on the population range; more heavily populated states equal more advanced monsters. (In-progress. Currently using randomization)
 
 ![Map Page](./public/images/map-page.png?raw=true "Map Page")
 
@@ -58,3 +58,4 @@ Erick Garcia, Talon Harmon, Carolyn Michael, & Christopher Self
 Jason Alexander (Instructor)
 
 #### Website:
+https://fierce-beyond-38744.herokuapp.com/
